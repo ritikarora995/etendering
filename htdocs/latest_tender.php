@@ -23,7 +23,7 @@ color:black;
 }
 </style>
 </head>
-<title> Latest Tender 
+<title> Latest Tender
 </title>
 <body>
 <form method=post>
@@ -46,9 +46,9 @@ if(isset($_POST["sb"]))
 $t=$_POST['tn'];
 $r=$_POST['rd'];
 $td=$_POST['td'];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into latest_tender values('$t','$td','$r')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into latest_tender values('$t','$td','$r')");
 echo "Added";
 }
 ?>

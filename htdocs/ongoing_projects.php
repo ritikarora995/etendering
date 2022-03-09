@@ -3,9 +3,9 @@
 </head>
 <body bgcolor="#c7d0d9">
 <?php
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-$query=mysql_query("select * from latest_tender");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+$query=mysqli_query($conn,"select * from latest_tender");
 echo "<h2>"."Latest Projects: "."</h2>";
 echo "<table border=2>
 <tr>
@@ -13,9 +13,9 @@ echo "<table border=2>
 	<th>Tender Description</th>
 	<th>Document Request Date</th>
 </tr>";
-while($record=mysql_fetch_array($query))
+while($record=mysqli_fetch_array($query))
 {
-echo 
+echo
 (
 
 "<tr>

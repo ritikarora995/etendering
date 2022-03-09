@@ -3,14 +3,14 @@
 </head>
 <body bgcolor="#c7d0d9">
 <?php
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-$query=mysql_query("select * from contrproject where project_id='$_POST[id]'");
-$query1=mysql_query("select type,Duration,totalcost from project where project_id='$_POST[id]'");
-while($record=mysql_fetch_array($query))
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+$query=mysqli_query($conn,"select * from contrproject where project_id='$_POST[id]'");
+$query1=mysqli_query($conn,"select type,Duration,totalcost from project where project_id='$_POST[id]'");
+while($record=mysqli_fetch_array($query))
 {
 echo "PROJECT ID: ".$record['project_id']."<br><br>";
-echo 
+echo
 (
 "<table border=1>
 <tr>
@@ -23,7 +23,7 @@ echo
 	 <td>".$record['contractorid']
 );
 }
-while($record1=mysql_fetch_array($query1))
+while($record1=mysqli_fetch_array($query1))
 {
 echo(
 "<td>".$record1['type'].

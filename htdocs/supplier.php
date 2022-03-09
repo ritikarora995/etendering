@@ -19,9 +19,9 @@ $c=$_POST["t2"];
 $ad=$_POST["t3"];
 $re=$_POST["t4"];
 $ph=$_POST["t5"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into supplier values('$id','$c','$ad','$re','$ph')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into supplier values('$id','$c','$ad','$re','$ph')");
 echo "Added";
 }
 ?>

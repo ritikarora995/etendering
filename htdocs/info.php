@@ -4,18 +4,18 @@
 <body bgcolor="#c7d0d9">
 <?php
 $id1=$_POST['id'];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-$query=mysql_query("select * from contractor where contractorid='$_POST[id]'");
-$query1=mysql_query("select * from address where contractorid='$_POST[id]'");
-$query2=mysql_query("select * from bank,contractor where contractor.bank_ifsc=bank.bank_ifsc and contractor.contractorid='$_POST[id]'");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+$query=mysqli_query($conn,"select * from contractor where contractorid='$_POST[id]'");
+$query1=mysqli_query($conn,"select * from address where contractorid='$_POST[id]'");
+$query2=mysqli_query($conn,"select * from bank,contractor where contractor.bank_ifsc=bank.bank_ifsc and contractor.contractorid='$_POST[id]'");
 ?>
 <font face="monotype corsiva"><h3>Welcome:</font>
 <?php
-while($record=mysql_fetch_array($query))
+while($record=mysqli_fetch_array($query))
 {
 echo $record['name']."<br><br>";
-echo 
+echo
 (
 "Contractor Details"."<br/>"."<table border=1>
 <tr><th>Contractor id</th><th>Name</th><th>Speciality</th><th>Phone</th><th>Email</th><th>Pan_no</th><th>Bank_Ifsc</th><th>Acc_no</th>
@@ -23,7 +23,7 @@ echo
 </table></br>"
 );
 }
-while($ad=mysql_fetch_array($query1))
+while($ad=mysqli_fetch_array($query1))
 {
 echo
 (
@@ -34,7 +34,7 @@ echo
 "</table><br>"
 );
 }
-while($bn=mysql_fetch_array($query2))
+while($bn=mysqli_fetch_array($query2))
 {
 echo
 (

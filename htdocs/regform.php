@@ -54,7 +54,7 @@ background:#21A02A;
 </style>
 </head>
 <body bgcolor="#c7d0d9">
-<img src="e-banner.jpg" height=25% width=100%>    
+<img src="e-banner.jpg" height=25% width=100%>
 <div class="nav">
   <ul>
     <li class="active"> <a href="H:\DBMS\FE\e-tendering.html">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Home &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|</a> </li>
@@ -154,11 +154,11 @@ $c=$_POST["t13"];
 $pc=$_POST["t14"];
 $co=$_POST["t15"];
 $st=$_POST["t16"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into bank values('$ic','$bn','$bb')");
-mysql_query("insert into contractor values('$id','$name','$spe','$ph','$em','$p','$ic','a')");
-mysql_query("insert into address values('$id','$pa','$c','$pc','$co','$st')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+$conn=mysqli_query($conn,"insert into bank values('$ic','$bn','$bb')");
+$conn=mysqli_query("insert into contractor values('$id','$name','$spe','$ph','$em','$p','$ic','a')");
+$conn=mysqli_query("insert into address values('$id','$pa','$c','$pc','$co','$st')");
 echo "<h3>Congrats</h3>You have been successfully registered <br/> Your Login id: $id";
 }
 ?>
