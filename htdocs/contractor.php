@@ -25,9 +25,9 @@ $em=$_POST["t5"];
 $p=$_POST["t6"];
 $b=$_POST["t7"];
 $a=$_POST["t8"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into contractor values('$id','$name','$spe','$ph','$em','$p','$b','a')");
+$conn=mysql_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into contractor values('$id','$name','$spe','$ph','$em','$p','$b','a')");
 echo "Added";
 }
 ?>
