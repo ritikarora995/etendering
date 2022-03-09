@@ -15,9 +15,9 @@ if(isset($_POST["s"]))
 $ic=$_POST["t1"];
 $bn=$_POST["t2"];
 $bb=$_POST["t3"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into bank values('$ic','$bn','$bb')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysqli_select_db("emp");
+mysqli_query($conn,"insert into bank values('$ic','$bn','$bb')");
 echo "Added";
 }
 ?>
