@@ -33,7 +33,7 @@ color:black;
 Latest Tender
 </legend>
 <table id="wrap1">
-<tr><td>Tender No.<td><input type=text name=tn><br/></tr>
+<tr><td>Tender No1.<td><input type=text name=tn><br/></tr>
 <tr><td>Document Request Date<td><input type=text name=rd><font size=1 face=arial>(As yyyy-mm-dd)</font><br/></tr>
 <tr><td>Tender Description<td><textarea rows=10 cols=25 name=td></textarea><br/></tr>
 </table><br/>
