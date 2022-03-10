@@ -54,7 +54,7 @@ background:#21A02A;
 </style>
 </head>
 <body bgcolor="#c7d0d9">
-<img src="e-banner.jpg" height=25% width=100%>    
+<img src="https://eprocure.gov.in/eprocure/images/topban.png" height=25% width=100%>    
 <div class="nav">
   <ul>
     <li class="active"> <a href="H:\DBMS\FE\e-tendering.html">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Home &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|</a> </li>
