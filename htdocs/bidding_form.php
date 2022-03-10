@@ -25,7 +25,7 @@ color:black;
 </head>
 <body>
 <form method=post>
-<center> 
+<center>
 <fieldset style="width:50%">
 <legend id="wrap">Bidding form</legend>
 <table id="wrap1">
@@ -45,9 +45,9 @@ if(isset($_POST["s"]))
 $cid=$_POST["t1"];
 $tid=$_POST["t2"];
 $bid=$_POST["t3"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into bidding values('$cid','$tid','$bid')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into bidding values('$cid','$tid','$bid')");
 echo "Added";
 }
 ?>

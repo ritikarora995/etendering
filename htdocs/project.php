@@ -17,9 +17,9 @@ $in=$_POST["t1"];
 $c=$_POST["t2"];
 $co=$_POST["t3"];
 $un=$_POST["t4"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into project values('$in','$c','$co','$un')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into project values('$in','$c','$co','$un')");
 echo "Added";
 }
 ?>

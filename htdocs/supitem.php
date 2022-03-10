@@ -13,9 +13,9 @@ if(isset($_POST["s"]))
 {
 $c=$_POST["t1"];
 $p=$_POST["t2"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into supitem values('$c','$p')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into supitem values('$c','$p')");
 echo "Added";
 }
 ?>

@@ -26,9 +26,9 @@ $ph=$_POST["t4"];
 $em=$_POST["t5"];
 $y=$_POST["t6"];
 $d=$_POST["t7"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into emp values('$id','$name','$des','$ph','$em','$y','$d')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into emp values('$id','$name','$des','$ph','$em','$y','$d')");
 echo "Added";
 }
 ?>

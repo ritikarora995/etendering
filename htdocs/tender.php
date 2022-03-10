@@ -19,9 +19,9 @@ $ln=$_POST["t2"];
 $ec=$_POST["t3"];
 $cd=$_POST["t4"];
 $od=$_POST["t5"];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-mysql_query("insert into tender values('$tn','$ln','$ec','$cd','$od')");
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+mysqli_query($conn,"insert into tender values('$tn','$ln','$ec','$cd','$od')");
 echo "Added";
 }
 ?>

@@ -4,13 +4,13 @@
 <body bgcolor="#c7d0d9">
 <?php
 $id1=$_POST['id'];
-mysql_connect("localhost","root","");
-mysql_select_db("emp");
-$query=mysql_query("select * from emp where name='$_POST[id]'");
-while($record=mysql_fetch_array($query))
+$conn=mysqli_connect("localhost","root","","emp");
+// mysql_select_db("emp");
+$query=mysqli_query($conn,"select * from emp where name='$_POST[id]'");
+while($record=mysqli_fetch_array($query))
 {
 echo $record['name']."<br><br>";
-echo 
+echo
 (
 "<table border=1>
 <tr>
